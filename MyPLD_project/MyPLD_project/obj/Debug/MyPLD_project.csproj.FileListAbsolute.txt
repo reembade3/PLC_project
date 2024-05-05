@@ -1,0 +1,11 @@
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\bin\Debug\MyPLD_project.exe.config
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\bin\Debug\MyPLD_project.exe
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\bin\Debug\MyPLD_project.pdb
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\bin\Debug\CalithaLib.dll
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\bin\Debug\GoldParserEngine.dll
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\obj\Debug\MyPLD_project.csprojResolveAssemblyReference.cache
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\obj\Debug\MyPLD_project.Form1.resources
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\obj\Debug\MyPLD_project.Properties.Resources.resources
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\obj\Debug\MyPLD_project.csproj.GenerateResource.Cache
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\obj\Debug\MyPLD_project.exe
+C:\Users\Reem\Desktop\PLC_project\MyPLD_project\MyPLD_project\obj\Debug\MyPLD_project.pdb

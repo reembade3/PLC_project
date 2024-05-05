@@ -1,0 +1,86 @@
+"Name"     = 'GoldParser My Language Syntax'
+"Author"   = 'Reem Badea'           
+
+"Start Symbol" = <Program>
+! -------------------------------------------------
+! Character Sets
+! -------------------------------------------------
+
+{ID Head}      = {Letter} + [_]
+{ID Tail}      = {Alphanumeric} + [_]
+{String Chars} = {Printable} + {HT} - ["\]
+
+! -------------------------------------------------
+! Terminals
+! -------------------------------------------------
+
+Identifier    = {ID Head}{ID Tail}*
+StringLiteral = '"' ( {String Chars} | '\' {Printable} )* '"'
+Integer       = {digit}+
+
+! -------------------------------------------------
+! Rules
+! -------------------------------------------------
+<Program> ::= <StatementList>
+           
+<StatementList> ::= <Statement> 
+                 | <StatementList> <Statement>
+                 
+<Statement> ::= <VariableDeclaration> | <Assignment>
+             | <IfStatement> |<SwitchStatement>
+             |<ForLoop>|<WhileLoop> |<DoWhileLoop>
+             
+<VariableDeclaration> ::= <Type> Identifier '=' <Expression>
+                      
+                       
+<Type> ::= 'int'|'string'|'bool'|
+        
+<Assignment> ::= Identifier '=' <Expression>
+              
+<IfStatement> ::= 'if' ':'<Expression> '{'<StatementList>'}'
+               | 'if' ':'<Expression> '{'<StatementList>'}' 'else' '{'<StatementList>'}'
+               
+<SwitchStatement> ::= 'switch' <Expression> '{'<CaseList> <Default>'}'
+                   
+<Caselist> ::= <CaseList> 'case' <Expression> ':' <StatementList> 'break'
+            |'case' <Expression> ':' <StatementList> 'break'
+            |
+            
+<Default> ::= 'default' ':' <StatementList>
+           
+<ForLoop> ::= 'for' '('<InitStatement> ',' <Expression> ')' '{'<StatementList>  <IncDec> '}' 
+           
+<InitStatement> ::= <VariableDeclaration>
+                 
+<IncDec> ::= Identifier '++'
+          |Identifier '--'
+          
+<WhileLoop> ::='while' '('<Expression>')' '{'<StatementList>'}' 
+             
+<DoWhileLoop> ::= 'do' '{'<StatementList>'}' 'while' <Expression> 'end'
+                
+<Expression> ::= <Expression> '>' <MultExp>
+              | <Expression> '>=' <MultExp>
+              |<Expression> '<' <MultExp>
+              |<Expression> '<=' <MultExp>
+              |<Expression> '==' <MultExp>
+              |<Expression> '!=' <MultExp>
+              |<Expression> '=' <MultExp>
+              |<MultExp>
+              
+<MultExp> ::= <MultExp> '*' <AddExp>
+           | <MultExp> '/' <AddExp>
+           |<AddExp>
+           
+<AddExp> ::= <AddExp> '+' <NegateExp>
+          |<AddExp> '-' <NegateExp>
+          |<NegateExp>
+          
+<NegateExp> ::= '-'<Value>
+             |<Value>
+             
+<Value> ::= Identifier
+         |Integer
+         |StringLiteral
+         |'('<Expression>')'
+            
